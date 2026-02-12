@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card p-4 text-center shadow">
+    <h3>Your Result</h3>
+    <h1 class="display-4">{{ result.score }}/20</h1>
+    <h4 class="text-success">{{ result.rating }}</h4>
+</div>
+
+{% endblock %}

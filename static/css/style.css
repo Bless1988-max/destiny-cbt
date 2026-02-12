@@ -1,0 +1,22 @@
+body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: navy;
+}
+
+.btn-primary {
+    background-color: #9ACD32 !important;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+h1, h2, h3 {
+    color: navy;
+}

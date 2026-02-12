@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="text-danger text-end">Time Left: <span id="timer"></span></h4>
+
+<form method="POST" action="/submit_exam" id="examForm">
+
+{% for q in questions %}
+<div class="card p-3 mb-3 shadow-sm">
+    <h5>{{ loop.index }}. {{ q.question_text }}</h5>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="{{ q.id }}" value="A">
+        <label class="form-check-label">{{ q.option_a }}</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="{{ q.id }}" value="B">
+        <label class="form-check-label">{{ q.option_b }}</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="{{ q.id }}" value="C">
+        <label class="form-check-label">{{ q.option_c }}</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="{{ q.id }}" value="D">
+        <label class="form-check-label">{{ q.option_d }}</label>
+    </div>
+</div>
+{% endfor %}
+
+<button class="btn btn-primary w-100">Submit Exam</button>
+</form>
+
+<script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+
+{% endblock %}

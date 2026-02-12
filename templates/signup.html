@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card p-4 shadow">
+    <h3 class="text-center mb-4">Pupil Signup</h3>
+
+    <form method="POST">
+        <input type="text" name="username" class="form-control mb-3" placeholder="Enter Username" required>
+
+        <select name="student_class" class="form-select mb-3" required>
+            <option value="">Select Class</option>
+            <option>Emerald 3</option>
+            <option>Emerald 4</option>
+            <option>Emerald 5</option>
+        </select>
+
+        <div class="input-group mb-3">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" required>
+            <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">Show</button>
+        </div>
+
+        <button class="btn btn-primary w-100">Create Account</button>
+    </form>
+</div>
+
+<script>
+function togglePassword(){
+    var x = document.getElementById("password");
+    x.type = x.type === "password" ? "text" : "password";
+}
+</script>
+
+{% endblock %}
