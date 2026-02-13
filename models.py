@@ -7,7 +7,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(200))
-    role = db.Column(db.String(20))
+    role = db.Column(db.String(20))  # admin, instructor, pupil
     student_class = db.Column(db.String(50))
 
 class Question(db.Model):
@@ -19,10 +19,10 @@ class Question(db.Model):
     option_d = db.Column(db.String(200))
     correct_answer = db.Column(db.String(10))
     student_class = db.Column(db.String(50))
+    instructor_id = db.Column(db.Integer)
 
 class Result(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer)
     score = db.Column(db.Integer)
     rating = db.Column(db.String(50))
-    student_class = db.Column(db.String(50))
